@@ -10,22 +10,22 @@ const Header = () => {
     <HeaderContainer>
       <Navigation>
         <div>
-        <div>
-            <Link to='/home'> Home </Link>|
-            <Link to='/favorite'>  Ma liste </Link>|
-            <Link to='/search'> Rechercher Film</Link>
-        </div>
+        
           <NavTop>
             <div>
             <Image
            src="https://cloudinary-res.cloudinary.com/image/upload/v1521663307/MiniFlix-Logo_620x180.png" alt="Netflix" width="112" height="28"
         ></Image>
             </div>
-            <div>NetFlix</div>
+            <Div>NetFlix</Div>
             <div>
-              
             </div>
           </NavTop>
+          <div>
+            <Header_links to='/home'> Home  </Header_links>
+            <Header_links to='/favorite'> Ma liste </Header_links>
+            <Header_links to='/search'> Rechercher </Header_links>
+        </div>
           <div></div>
         </div>
       </Navigation>
@@ -59,10 +59,16 @@ height: 10px;
 width: 25px;
 margin-left: -1250px;
 `
-const header_links = styled(Link)`
+const Header_links = styled(Link)`
 padding-left:30px;
 list-style:none;
 color:#fdf9f9;
+
+`
+const Div =  styled.div`
+height: 10px;
+font-size: 20px;
+color: red;
 
 `
 
