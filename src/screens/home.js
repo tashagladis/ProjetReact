@@ -57,7 +57,7 @@ const Home = props => {
   return (
     
     <div>
-      {isTabletOrMobile &&
+      
       <CharacterListContainer>
       
         {charactersList.map((character, index) => (
@@ -66,7 +66,7 @@ const Home = props => {
         ))}
      
       </CharacterListContainer>
-}
+
      
     </div>
   )
