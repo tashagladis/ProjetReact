@@ -11,6 +11,7 @@ import privateKey from '../.secret'
 import Character from '../components/character'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
+import { useMediaQuery } from 'react-responsive'
 
 
 const Home = props => {
@@ -21,6 +22,7 @@ const Home = props => {
   const [charactersList, setCharactersList] = useState([])
 
   const history = useHistory()
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
 
 
@@ -55,13 +57,16 @@ const Home = props => {
   return (
     
     <div>
-      
+      {isTabletOrMobile &&
       <CharacterListContainer>
+      
         {charactersList.map((character, index) => (
           <Character key={index} character={character}
           ></Character>
         ))}
+     
       </CharacterListContainer>
+}
      
     </div>
   )

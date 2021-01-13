@@ -1,13 +1,17 @@
 import React from 'react'
 
 import styled from 'styled-components'
+import { useMediaQuery } from 'react-responsive'
 
 import { Link } from 'react-router-dom'
 
 
 const Header = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
   return (
     <HeaderContainer>
+  {isTabletOrMobile &&
       <Navigation>
         <div>
         
@@ -17,7 +21,9 @@ const Header = () => {
            src="https://cloudinary-res.cloudinary.com/image/upload/v1521663307/MiniFlix-Logo_620x180.png" alt="Netflix" width="112" height="28"
         ></Image>
             </div>
+            {isTabletOrMobile &&
             <Div>NetFlix</Div>
+}
             <div>
             </div>
           </NavTop>
@@ -29,6 +35,7 @@ const Header = () => {
           <div></div>
         </div>
       </Navigation>
+}
     </HeaderContainer>
   )
 }
