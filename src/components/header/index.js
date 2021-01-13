@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import HeaderLogout from '../headerLogout'
+
 import { Link } from 'react-router-dom'
 
 

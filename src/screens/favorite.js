@@ -9,7 +9,7 @@ const Favorite = () => {
 
   return (
     <div>
-      <p>favoris</p>
+      <p> Mes Favoris</p>
       <CharacterListContainer>
         {fav.map((character, index) => (
           <Character key={index} character={character}></Character>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 import Header from '../components/header/index'
-import Pagination from '../components/pagination/index'
+
 
 import md5 from 'md5'
 
@@ -55,9 +55,7 @@ const Home = props => {
   return (
     
     <div>
-      <div>
-        <Link to='/favorite'>Ma liste</Link>
-      </div>
+      
       <CharacterListContainer>
         {charactersList.map((character, index) => (
           <Character key={index} character={character}
