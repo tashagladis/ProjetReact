@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
 import Header from '../components/header/index'
-
-
-import md5 from 'md5'
-
-import privateKey from '../.secret'
+import { useSelector} from 'react-redux'
 import Character from '../components/character'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
@@ -18,19 +13,15 @@ const Home = props => {
   const valueOffset = 20
   const [currentPage, setCurrentPage] = useState(0)
   const [total, setTotal] = useState(0)
-
   const [charactersList, setCharactersList] = useState([])
-
   const history = useHistory()
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const counter= useSelector( state => state.counter.counterValue)
 
 
 
   useEffect(() => {
     const publicKey = '4ecdcf45634968eebe5ba1378d7d2b9e'
-    const timeStamp = new Date().getMilliseconds()
-    const hash = md5(`${timeStamp}${privateKey}${publicKey}`)
-    const generatedUrl = 'https://api.themoviedb.org/3/movie/now_playing'
     const lang = 'en-US'
     const pge = '1'
 
@@ -57,7 +48,7 @@ const Home = props => {
   return (
     
     <div>
-      
+      <p>{counter}</p>
       <CharacterListContainer>
       
         {charactersList.map((character, index) => (

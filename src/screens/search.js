@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import Character from '../components/character'
 
+
 const Search = () => {
 
   const url = 'https://api.themoviedb.org/3/search/multi?api_key=4ecdcf45634968eebe5ba1378d7d2b9e&language=en-US&query=m&page=1'

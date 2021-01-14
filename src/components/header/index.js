@@ -21,9 +21,7 @@ const Header = () => {
            src="https://cloudinary-res.cloudinary.com/image/upload/v1521663307/MiniFlix-Logo_620x180.png" alt="Netflix" width="112" height="28"
         ></Image>
             </div>
-        
             <Div>NetFlix</Div>
-
             <div>
             </div>
           </NavTop>
