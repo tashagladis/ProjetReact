@@ -20,7 +20,8 @@ const Home = props => {
 
   const [isLoading, setLoading] = useState(true)
 
-  useEffect(() => {
+   
+  const getFilms = () => {
     const publicKey = '4ecdcf45634968eebe5ba1378d7d2b9e'
     const lang = 'en-US'
     const pge = '1'
@@ -45,7 +46,15 @@ const Home = props => {
         console.log(err)
         setLoading(false)
       })
-  })
+
+  }
+  useEffect(() => {
+    setTimeout(() => {
+      getFilms()
+    }, 2000);
+  
+
+  }, [])
   if(isLoading){
     return (<p>Chargement en cours ...</p>)
   }
