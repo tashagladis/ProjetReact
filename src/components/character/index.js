@@ -10,8 +10,8 @@ const Character = ({ character }) => {
   const [isFav, setFav] = useState(false)
 
   const handleFavorite = hero => {
-    const currentFavorite = localStorage.getItem('favorite')
-      ? JSON.parse(localStorage.getItem('favorite'))
+    const currentFavorite = localStorage.getItem('favoritefilm')
+      ? JSON.parse(localStorage.getItem('favoritefilm'))
       : []
 
     const isPresent = currentFavorite.map(e => e.id).indexOf(hero.id)
@@ -20,7 +20,7 @@ const Character = ({ character }) => {
 
     if (isPresent === -1) {
       currentFavorite.push(hero)
-      localStorage.setItem('favorite', JSON.stringify(currentFavorite))
+      localStorage.setItem('favoritefilm', JSON.stringify(currentFavorite))
     } else {
       const filteredCharacters = currentFavorite.filter(
         character => character.id !== hero.id

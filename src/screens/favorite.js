@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Character from '../components/character'
 
 const Favorite = () => {
-  const [fav, setFav] = useState(JSON.parse(localStorage.getItem('favorite')))
+  const [fav, setFav] = useState(JSON.parse(localStorage.getItem('favoritefilm')))
 
   useEffect(() => {})
 
