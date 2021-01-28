@@ -18,7 +18,7 @@ const Home = props => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   const counter= useSelector( state => state.counter.counterValue)
 
-
+  const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
     const publicKey = '4ecdcf45634968eebe5ba1378d7d2b9e'
@@ -39,22 +39,26 @@ const Home = props => {
         console.log(res)
         setCharactersList(res.data.results)
         setTotal(res.data.total_results)
+        setLoading(false)
       })
       .catch(err => {
         console.log(err)
+        setLoading(false)
       })
   })
-
+  if(isLoading){
+    return (<p>Chargement en cours ...</p>)
+  }
   return (
     
     <div>
       <p>{counter}</p>
       <CharacterListContainer>
       
-        {charactersList.map((character, index) => (
+        {charactersList[0] ? charactersList.map((character, index) => (
           <Character key={index} character={character}
           ></Character>
-        ))}
+        )): <p>Pas de films disponible pour le moment!</p>}
      
       </CharacterListContainer>
 

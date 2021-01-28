@@ -15,6 +15,7 @@ import Search from '../screens/search'
 import Counter from '../screens/counter'
 import Film from '../screens/film'
 
+
 const Routes = () => {
   return (
     <Router>
@@ -26,6 +27,7 @@ const Routes = () => {
         <Route path='/search' component={Search} />
         <Route path='/counter' component={Counter} />
         <Route path='/film' component={Film} />
+        
         <Redirect to='/'></Redirect>
       </Switch>
     </Router>
