@@ -52,7 +52,7 @@ const Home = props => {
   return (
     
     <div>
-      <p>{counter}</p>
+      
       <CharacterListContainer>
       
         {charactersList[0] ? charactersList.map((character, index) => (
